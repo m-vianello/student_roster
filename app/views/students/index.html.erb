@@ -1,1 +1,9 @@
 <h1>Studnet Roster</h1>
+
+<% @students.each do |student| %>
+  <div class="student">
+    <p><%= student.student_id %></p>
+    <p><%= student.full_name %></p>
+  </div>
+
+<% end %>
