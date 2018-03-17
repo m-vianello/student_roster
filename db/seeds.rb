@@ -9,14 +9,15 @@
 puts "creating students"
 Student.destroy_all
 
-20.times do
+20.times do |y|
   putc "."
-  Student.create!(
+  s = Student.create!(
    student_id:  Faker::Number.number(10),
    first_name: Faker::Name.first_name,
    last_name: Faker::Name.last_name,
-
  )
+ s.avatar = Rails.root.join("app/assets/images/profile_pics/stock-profile-#{y + 1}.jpeg").open
+ s.save!
 
 end
 
